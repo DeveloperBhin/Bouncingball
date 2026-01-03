@@ -4,29 +4,39 @@ using UnityEngine.SceneManagement; // For loading/reloading scenes
 
 public class ButtonsControls : MonoBehaviour
 {
-    public Button HomButton;
+    public Button HomeButton;
     public Button PlayButton;
-    public Button PausButton;
-    public Button xitButton;
+    public Button PauseButton;
+    public Button ExitButton;
     public Button StartButton;
+    public Rigidbody sphereRb;
+    public float startForce = 20f; // Adjust for desired roll speed
+
 
     private bool isPaused = false;
 
     void Start()
     {
         // Attach listeners to each button
-        HomButton.onClick.AddListener(OnHomeButton);
+        HomeButton.onClick.AddListener(OnHomeButton);
         PlayButton.onClick.AddListener(OnPlayButton);
-        PausButton.onClick.AddListener(OnPauseButton);
-        xitButton.onClick.AddListener(OnExitButton);
+        PauseButton.onClick.AddListener(OnPauseButton);
+        ExitButton.onClick.AddListener(OnExitButton);
         StartButton.onClick.AddListener(OnStartButton);
     }
 
     void OnHomeButton()
     {
-        // Example: Reload home scene
-        SceneManager.LoadScene("HomeScene");
-    }
+    Debug.Log("Exit clicked");
+
+#if UNITY_EDITOR
+    // If running inside the Unity Editor — stop Play Mode
+    UnityEditor.EditorApplication.isPlaying = false;
+#else
+    // If running in a built game — quit the application
+    Application.Quit();
+#endif
+}
 
     void OnPlayButton()
     {
@@ -41,17 +51,25 @@ public class ButtonsControls : MonoBehaviour
         Debug.Log("Paused: " + isPaused);
     }
 
-    void OnExitButton()
-    {
-        Debug.Log("Exit clicked");
-        Application.Quit(); // Works in build (not in editor)
-    }
+   void OnExitButton()
+{
+    Debug.Log("Exit clicked");
 
-    void OnStartButton()
+#if UNITY_EDITOR
+    // If running inside the Unity Editor — stop Play Mode
+    UnityEditor.EditorApplication.isPlaying = false;
+#else
+    // If running in a built game — quit the application
+    Application.Quit();
+#endif
+}
+
+
+    
+      void OnStartButton()
     {
         Debug.Log("Start clicked");
-        // Example: Load next scene or start gameplay
-        SceneManager.LoadScene("GameScene");
+        sphereRb.AddForce(Vector3.forward * startForce);
     }
 }
 
