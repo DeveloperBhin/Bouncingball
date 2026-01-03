@@ -302,6 +302,7 @@
 -r:"Library/Bee/artifacts/2400b0aP.dag/UnityEngine.UI.ref.dll"
 -analyzer:"/home/norbhin/Projects/UnityEditor/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/home/norbhin/Projects/UnityEditor/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/ButtonsControls.cs"
 "Assets/MainMenuEvents.cs"
 "Assets/Scene1/Cameramove.cs"
 "Assets/Scene1/FollowPlayer.cs"

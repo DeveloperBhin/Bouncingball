@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ButtonsControls
     - Cameramove
     - SphereBehavior
     - StoreCount
@@ -20,8 +21,10 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -46,7 +49,12 @@ ScriptsOnlyBuild:
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.Button/ButtonClickedEvent
+    - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.SpriteState
   methodsToPreserve: []
   sceneClasses:
     Assets/Scene1/SphereScene.unity:
@@ -85,6 +93,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17126}
     - Class: 114
+      Script: {instanceID: 17156}
+    - Class: 114
       Script: {instanceID: 17180}
     - Class: 114
       Script: {instanceID: 17204}
@@ -93,25 +103,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17288}
     - Class: 114
-      Script: {instanceID: 17324}
+      Script: {instanceID: 17304}
     - Class: 114
-      Script: {instanceID: 17388}
+      Script: {instanceID: 17326}
     - Class: 114
-      Script: {instanceID: 17464}
+      Script: {instanceID: 17390}
     - Class: 114
-      Script: {instanceID: 17486}
+      Script: {instanceID: 17466}
     - Class: 114
-      Script: {instanceID: 17546}
+      Script: {instanceID: 17488}
     - Class: 114
-      Script: {instanceID: 17596}
+      Script: {instanceID: 17548}
     - Class: 114
-      Script: {instanceID: 17660}
+      Script: {instanceID: 17598}
     - Class: 114
-      Script: {instanceID: 17678}
+      Script: {instanceID: 17662}
     - Class: 114
-      Script: {instanceID: 17792}
+      Script: {instanceID: 17680}
     - Class: 114
-      Script: {instanceID: 18108}
+      Script: {instanceID: 17768}
+    - Class: 114
+      Script: {instanceID: 17794}
+    - Class: 114
+      Script: {instanceID: 18128}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -121,6 +135,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -279,6 +295,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: e7124bc115d3cb9a1a934d604bad45a9
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ButtonsControls
   - hash:
       serializedVersion: 2
       Hash: 892b5093967522535ba980d28ce42084
